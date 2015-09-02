@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CityConnectSignupViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="tns:Name" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityConnectSignupViewModel" nillable="true" type="tns:CityConnectSignupViewModel" />
+  <xs:complexType name="Name">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="First" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Last" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Name" nillable="true" type="tns:Name" />
+  <xs:complexType name="IndividualViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmailAddres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndividualViewModel" nillable="true" type="tns:IndividualViewModel" />
+  <xs:complexType name="ArrayOfIndividualViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndividualViewModel" nillable="true" type="tns:IndividualViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndividualViewModel" nillable="true" type="tns:ArrayOfIndividualViewModel" />
+</xs:schema>

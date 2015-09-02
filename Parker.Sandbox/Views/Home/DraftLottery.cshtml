@@ -1,0 +1,118 @@
+﻿@model ICollection<FantasyTeamViewModel>
+
+@{
+    ViewBag.Title = "Draft Lottery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts
+{
+	<script type="text/javascript">
+		var lastPick = 0;
+		var eligibleItems = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+		(function ($) {
+			$(document)
+				.on("click", ".js-start", function () {
+					startLotto();
+				});
+		}(jQuery));
+		
+		function startLotto() {
+			lastPick = 0;
+			$(".js-start").hide();
+			randomDraw(0, Math.floor(Math.random() * 50) + 20, 100, true);
+		}
+
+		function randomDraw(ndx, interations, timeout, firstLoop) {
+			if (ndx <= interations) {
+				ndx += 1;
+				setTimeout(function () {					
+					var teamId = getTeamId(lastPick);
+					$(".selected").removeClass("selected");
+					$(".eligible[data-team-id=" + teamId + "]").addClass("selected");
+
+					if (ndx == interations) {
+						if (firstLoop) {
+							randomDraw(0, Math.floor(Math.random() * 5) + 1, 500, false);
+						} else {
+							$(".draftOrder").append("<dt>" + parseInt($(".draftOrder dt").length + 1) + "</dt><dd>" + $(".selected").attr("data-team-name") + " - " + $(".selected").attr("data-team-coach") + "</dd>");
+							$(".selected").removeClass("eligible").addClass("ineligible").html("");
+							lastPick = teamId;
+							eligibleItems.splice(eligibleItems.indexOf(teamId), 1);
+
+							if (eligibleItems.length == 1) {
+								team = eligibleItems[0];
+								$(".draftOrder").append("<dt>" + parseInt($(".draftOrder dt").length + 1) + "</dt><dd>" + $(".eligible[data-team-id=" + team + "]").attr("data-team-name") + " - " + $(".eligible[data-team-id=" + team + "]").attr("data-team-coach") + "</dd>");
+								$(".eligible[data-team-id=" + team + "]").removeClass("eligible").addClass("ineligible").html("");
+								$(".js-start").attr("value", "Re-Draw").show();
+							} else {
+								setTimeout(function () { startLotto(); }, 2000)
+							}
+						}
+					} else {
+						eligibleItems = shuffle(eligibleItems);
+						randomDraw(ndx, interations, timeout, firstLoop);
+					}
+				}, timeout);
+			}
+		}
+
+		function selectTeam(teamId) {
+			
+		}
+
+		function getTeamId(currentTeam) {
+			if (currentTeam === lastPick || eligibleItems.indexOf(currentTeam) < 0) {
+				return getTeamId(Math.floor(Math.random() * 9) + 1);
+			}
+
+			return currentTeam;
+		}
+
+		function shuffle(array) {
+			var currentIndex = array.length, temporaryValue, randomIndex;
+
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+
+				// Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -= 1;
+
+				// And swap it with the current element.
+				temporaryValue = array[currentIndex];
+				array[currentIndex] = array[randomIndex];
+				array[randomIndex] = temporaryValue;
+			}
+
+			return array;
+		}
+	</script>
+}
+
+<h2>Draft Lottery</h2>
+
+<div class="jumbotron" style="float: left; width: 40%">
+	<h1>Draft Order</h1>
+	<dl class="draftOrder"></dl>
+</div>
+
+<div class="row">
+<div class="col-md-1" />
+</div>
+
+<div class="row" style="float: left; width: 50%; overflow: hidden">
+@foreach (var team in Model)
+{
+	<div class="col-md-4 eligible" style="border: 1px solid black; height: 125px;" data-team-id="@team.Id" data-team-name="@team.TeamName" data-team-coach="@team.Coach">
+		<h2>@team.TeamName</h2>
+	</div>
+}
+	<div style="clear: both"></div>
+	<div style="padding-top: 25px;">
+		<input type="button" value="Start" class="js-start" />
+	</div>
+</div>
+
+<div style="clear: both"></div>
