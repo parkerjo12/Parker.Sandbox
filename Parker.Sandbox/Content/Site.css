@@ -37,4 +37,5 @@ dt {
 
 .selected {background-color: red;}
 .draftOrder dt {float: left; }
-.ineligible {color: grey;}
+.ineligible {color: grey; text-decoration: line-through}
+.ineligible h2 {display :none;}

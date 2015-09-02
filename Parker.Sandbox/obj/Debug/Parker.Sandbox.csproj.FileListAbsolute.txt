@@ -35,7 +35,6 @@ C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\bin\System.Web.WebPages.Deploymen
 C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\bin\System.Web.WebPages.Razor.xml
 C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\bin\Antlr3.Runtime.pdb
 C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\bin\Newtonsoft.Json.xml
-C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\obj\Debug\Parker.Sandbox.csprojResolveAssemblyReference.cache
 C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\obj\Debug\Parker.Sandbox.dll
 C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\obj\Debug\Parker.Sandbox.pdb
 C:\Projects\Misc\Parker.Sandbox\Parker.Sandbox\bin\Microsoft.IdentityModel.dll

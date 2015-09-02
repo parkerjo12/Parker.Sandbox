@@ -55,7 +55,8 @@ namespace Parker.Sandbox.Controllers
 				new FantasyTeamViewModel { Id = 6,  TeamName = "Trap Queen", Coach = "Shining Light" },
 				new FantasyTeamViewModel { Id = 7,  TeamName = "Rusty Trombone", Coach = "Mitch" },
 				new FantasyTeamViewModel { Id = 8,  TeamName = "He's Back", Coach = "Schirmer" },
-				new FantasyTeamViewModel { Id = 9,  TeamName = "Stroke Genius", Coach = "Kelcey" }
+				new FantasyTeamViewModel { Id = 9,  TeamName = "Stroke Genius", Coach = "Kelcey" },
+				new FantasyTeamViewModel { Id = 10,  TeamName = "Late to the Party", Coach = "Aaron" }
 			});
 		}
 	}
