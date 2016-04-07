@@ -145,22 +145,43 @@ namespace Parker.Sandbox.AMSConnect {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailAddresField;
+        private string CustomerIdentifierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FirstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IdField;
+        private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MiddleNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrgAccountingCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrgNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneExtensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PrefixField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RelationshipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] RelationshipsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SuffixField;
@@ -182,14 +203,27 @@ namespace Parker.Sandbox.AMSConnect {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EmailAddres {
+        public string CustomerIdentifier {
             get {
-                return this.EmailAddresField;
+                return this.CustomerIdentifierField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailAddresField, value) != true)) {
-                    this.EmailAddresField = value;
-                    this.RaisePropertyChanged("EmailAddres");
+                if ((object.ReferenceEquals(this.CustomerIdentifierField, value) != true)) {
+                    this.CustomerIdentifierField = value;
+                    this.RaisePropertyChanged("CustomerIdentifier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EmailAddress {
+            get {
+                return this.EmailAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailAddressField, value) != true)) {
+                    this.EmailAddressField = value;
+                    this.RaisePropertyChanged("EmailAddress");
                 }
             }
         }
@@ -208,12 +242,12 @@ namespace Parker.Sandbox.AMSConnect {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Id {
+        public string Id {
             get {
                 return this.IdField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
                 }
@@ -229,6 +263,58 @@ namespace Parker.Sandbox.AMSConnect {
                 if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
                     this.LastNameField = value;
                     this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MiddleName {
+            get {
+                return this.MiddleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MiddleNameField, value) != true)) {
+                    this.MiddleNameField = value;
+                    this.RaisePropertyChanged("MiddleName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrgAccountingCode {
+            get {
+                return this.OrgAccountingCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrgAccountingCodeField, value) != true)) {
+                    this.OrgAccountingCodeField = value;
+                    this.RaisePropertyChanged("OrgAccountingCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrgName {
+            get {
+                return this.OrgNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrgNameField, value) != true)) {
+                    this.OrgNameField = value;
+                    this.RaisePropertyChanged("OrgName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PhoneExtension {
+            get {
+                return this.PhoneExtensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneExtensionField, value) != true)) {
+                    this.PhoneExtensionField = value;
+                    this.RaisePropertyChanged("PhoneExtension");
                 }
             }
         }
@@ -255,6 +341,32 @@ namespace Parker.Sandbox.AMSConnect {
                 if ((object.ReferenceEquals(this.PrefixField, value) != true)) {
                     this.PrefixField = value;
                     this.RaisePropertyChanged("Prefix");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RelationshipCode {
+            get {
+                return this.RelationshipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RelationshipCodeField, value) != true)) {
+                    this.RelationshipCodeField = value;
+                    this.RaisePropertyChanged("RelationshipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] Relationships {
+            get {
+                return this.RelationshipsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RelationshipsField, value) != true)) {
+                    this.RelationshipsField = value;
+                    this.RaisePropertyChanged("Relationships");
                 }
             }
         }
@@ -308,6 +420,455 @@ namespace Parker.Sandbox.AMSConnect {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrganizationIndividualViewModel", Namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels")]
+    [System.SerializableAttribute()]
+    public partial class OrganizationIndividualViewModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerIdentifierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrgAccountingCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RelationshipTypeCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerIdentifier {
+            get {
+                return this.CustomerIdentifierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerIdentifierField, value) != true)) {
+                    this.CustomerIdentifierField = value;
+                    this.RaisePropertyChanged("CustomerIdentifier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrgAccountingCode {
+            get {
+                return this.OrgAccountingCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrgAccountingCodeField, value) != true)) {
+                    this.OrgAccountingCodeField = value;
+                    this.RaisePropertyChanged("OrgAccountingCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RelationshipTypeCode {
+            get {
+                return this.RelationshipTypeCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RelationshipTypeCodeField, value) != true)) {
+                    this.RelationshipTypeCodeField = value;
+                    this.RaisePropertyChanged("RelationshipTypeCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IndividualServiceResult", Namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels")]
+    [System.SerializableAttribute()]
+    public partial class IndividualServiceResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Parker.Sandbox.AMSConnect.MASCServiceError ErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HttpStatusCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Parker.Sandbox.AMSConnect.IndividualViewModel ViewModelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Parker.Sandbox.AMSConnect.MASCServiceError Error {
+            get {
+                return this.ErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorField, value) != true)) {
+                    this.ErrorField = value;
+                    this.RaisePropertyChanged("Error");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int HttpStatusCode {
+            get {
+                return this.HttpStatusCodeField;
+            }
+            set {
+                if ((this.HttpStatusCodeField.Equals(value) != true)) {
+                    this.HttpStatusCodeField = value;
+                    this.RaisePropertyChanged("HttpStatusCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Parker.Sandbox.AMSConnect.IndividualViewModel ViewModel {
+            get {
+                return this.ViewModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ViewModelField, value) != true)) {
+                    this.ViewModelField = value;
+                    this.RaisePropertyChanged("ViewModel");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MASCServiceError", Namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services")]
+    [System.SerializableAttribute()]
+    public partial class MASCServiceError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExceptionTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SourceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExceptionType {
+            get {
+                return this.ExceptionTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionTypeField, value) != true)) {
+                    this.ExceptionTypeField = value;
+                    this.RaisePropertyChanged("ExceptionType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Source {
+            get {
+                return this.SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
+                    this.SourceField = value;
+                    this.RaisePropertyChanged("Source");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St", Namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services")]
+    [System.SerializableAttribute()]
+    public partial class MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Parker.Sandbox.AMSConnect.MASCServiceError ErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HttpStatusCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] ViewModelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Parker.Sandbox.AMSConnect.MASCServiceError Error {
+            get {
+                return this.ErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorField, value) != true)) {
+                    this.ErrorField = value;
+                    this.RaisePropertyChanged("Error");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int HttpStatusCode {
+            get {
+                return this.HttpStatusCodeField;
+            }
+            set {
+                if ((this.HttpStatusCodeField.Equals(value) != true)) {
+                    this.HttpStatusCodeField = value;
+                    this.RaisePropertyChanged("HttpStatusCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] ViewModel {
+            get {
+                return this.ViewModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ViewModelField, value) != true)) {
+                    this.ViewModelField = value;
+                    this.RaisePropertyChanged("ViewModel");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrganizationViewModel", Namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels")]
+    [System.SerializableAttribute()]
+    public partial class OrganizationViewModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountingCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] IndividualRelationshipsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SortNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AccountingCode {
+            get {
+                return this.AccountingCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountingCodeField, value) != true)) {
+                    this.AccountingCodeField = value;
+                    this.RaisePropertyChanged("AccountingCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] IndividualRelationships {
+            get {
+                return this.IndividualRelationshipsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IndividualRelationshipsField, value) != true)) {
+                    this.IndividualRelationshipsField = value;
+                    this.RaisePropertyChanged("IndividualRelationships");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SortName {
+            get {
+                return this.SortNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SortNameField, value) != true)) {
+                    this.SortNameField = value;
+                    this.RaisePropertyChanged("SortName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AMSConnect.IMASCAMSConnectService")]
     public interface IMASCAMSConnectService {
@@ -318,17 +879,35 @@ namespace Parker.Sandbox.AMSConnect {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/CityConnectSignUp", ReplyAction="http://tempuri.org/IMASCAMSConnectService/CityConnectSignUpResponse")]
         System.Threading.Tasks.Task CityConnectSignUpAsync(Parker.Sandbox.AMSConnect.CityConnectSignupViewModel model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/CreateIndividual", ReplyAction="http://tempuri.org/IMASCAMSConnectService/CreateIndividualResponse")]
-        Parker.Sandbox.AMSConnect.IndividualViewModel CreateIndividual();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/GetIndividual", ReplyAction="http://tempuri.org/IMASCAMSConnectService/GetIndividualResponse")]
+        Parker.Sandbox.AMSConnect.IndividualViewModel GetIndividual(string customerIdentifier, string relationshipTypeCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/CreateIndividual", ReplyAction="http://tempuri.org/IMASCAMSConnectService/CreateIndividualResponse")]
-        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel> CreateIndividualAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/GetIndividual", ReplyAction="http://tempuri.org/IMASCAMSConnectService/GetIndividualResponse")]
+        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel> GetIndividualAsync(string customerIdentifier, string relationshipTypeCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/Search", ReplyAction="http://tempuri.org/IMASCAMSConnectService/SearchResponse")]
-        Parker.Sandbox.AMSConnect.IndividualViewModel[] Search();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/PostIndividual", ReplyAction="http://tempuri.org/IMASCAMSConnectService/PostIndividualResponse")]
+        Parker.Sandbox.AMSConnect.IndividualServiceResult PostIndividual(Parker.Sandbox.AMSConnect.IndividualViewModel model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/Search", ReplyAction="http://tempuri.org/IMASCAMSConnectService/SearchResponse")]
-        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel[]> SearchAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/PostIndividual", ReplyAction="http://tempuri.org/IMASCAMSConnectService/PostIndividualResponse")]
+        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualServiceResult> PostIndividualAsync(Parker.Sandbox.AMSConnect.IndividualViewModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/Relationships", ReplyAction="http://tempuri.org/IMASCAMSConnectService/RelationshipsResponse")]
+        Parker.Sandbox.AMSConnect.MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St Relationships(Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] models);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/Relationships", ReplyAction="http://tempuri.org/IMASCAMSConnectService/RelationshipsResponse")]
+        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St> RelationshipsAsync(Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] models);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividuals", ReplyAction="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividualsResponse")]
+        Parker.Sandbox.AMSConnect.IndividualViewModel[] SetOffDebtIndividuals(string orgCode, string criteria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividuals", ReplyAction="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividualsResponse")]
+        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel[]> SetOffDebtIndividualsAsync(string orgCode, string criteria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/Organization", ReplyAction="http://tempuri.org/IMASCAMSConnectService/OrganizationResponse")]
+        Parker.Sandbox.AMSConnect.OrganizationViewModel Organization(string accountingCode, string[] relationshipTypeCodes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMASCAMSConnectService/Organization", ReplyAction="http://tempuri.org/IMASCAMSConnectService/OrganizationResponse")]
+        System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.OrganizationViewModel> OrganizationAsync(string accountingCode, string[] relationshipTypeCodes);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -366,20 +945,44 @@ namespace Parker.Sandbox.AMSConnect {
             return base.Channel.CityConnectSignUpAsync(model);
         }
         
-        public Parker.Sandbox.AMSConnect.IndividualViewModel CreateIndividual() {
-            return base.Channel.CreateIndividual();
+        public Parker.Sandbox.AMSConnect.IndividualViewModel GetIndividual(string customerIdentifier, string relationshipTypeCode) {
+            return base.Channel.GetIndividual(customerIdentifier, relationshipTypeCode);
         }
         
-        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel> CreateIndividualAsync() {
-            return base.Channel.CreateIndividualAsync();
+        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel> GetIndividualAsync(string customerIdentifier, string relationshipTypeCode) {
+            return base.Channel.GetIndividualAsync(customerIdentifier, relationshipTypeCode);
         }
         
-        public Parker.Sandbox.AMSConnect.IndividualViewModel[] Search() {
-            return base.Channel.Search();
+        public Parker.Sandbox.AMSConnect.IndividualServiceResult PostIndividual(Parker.Sandbox.AMSConnect.IndividualViewModel model) {
+            return base.Channel.PostIndividual(model);
         }
         
-        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel[]> SearchAsync() {
-            return base.Channel.SearchAsync();
+        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualServiceResult> PostIndividualAsync(Parker.Sandbox.AMSConnect.IndividualViewModel model) {
+            return base.Channel.PostIndividualAsync(model);
+        }
+        
+        public Parker.Sandbox.AMSConnect.MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St Relationships(Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] models) {
+            return base.Channel.Relationships(models);
+        }
+        
+        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St> RelationshipsAsync(Parker.Sandbox.AMSConnect.OrganizationIndividualViewModel[] models) {
+            return base.Channel.RelationshipsAsync(models);
+        }
+        
+        public Parker.Sandbox.AMSConnect.IndividualViewModel[] SetOffDebtIndividuals(string orgCode, string criteria) {
+            return base.Channel.SetOffDebtIndividuals(orgCode, criteria);
+        }
+        
+        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.IndividualViewModel[]> SetOffDebtIndividualsAsync(string orgCode, string criteria) {
+            return base.Channel.SetOffDebtIndividualsAsync(orgCode, criteria);
+        }
+        
+        public Parker.Sandbox.AMSConnect.OrganizationViewModel Organization(string accountingCode, string[] relationshipTypeCodes) {
+            return base.Channel.Organization(accountingCode, relationshipTypeCodes);
+        }
+        
+        public System.Threading.Tasks.Task<Parker.Sandbox.AMSConnect.OrganizationViewModel> OrganizationAsync(string accountingCode, string[] relationshipTypeCodes) {
+            return base.Channel.OrganizationAsync(accountingCode, relationshipTypeCodes);
         }
     }
 }

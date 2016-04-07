@@ -17,6 +17,16 @@
 					$(".ineligible").addClass("eligible").removeClass("ineligible");
 					startLotto();
 				});
+
+				var today = new Date();
+				var draftTime = new Date("09-02-2015 20:00");
+				var diffMs = (draftTime - today); // milliseconds between now & Christmas
+				var diffDays = Math.round(diffMs / 86400000); // days
+				var diffHrs = Math.round((diffMs % 86400000) / 3600000); // hours
+				var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+
+				var fiveMinutes = diffMins * 60, display = $('.countdown h1');
+				startTimer(fiveMinutes, display);
 		}(jQuery));
 		
 		function startLotto() {
@@ -55,7 +65,7 @@
 								$(".draftOrder").prepend("<dt>1</dt><dd>" + $(".eligible[data-team-id=" + team + "]").attr("data-team-name") + " - " + $(".eligible[data-team-id=" + team + "]").attr("data-team-coach") + "</dd>");
 								$(".eligible[data-team-id=" + team + "]").removeClass("eligible").addClass("ineligible");
 							} else {
-								setTimeout(function () { startLotto(); }, 2000)
+								setTimeout(function () { startLotto(); }, 4000)
 							}
 						}
 					} else {
@@ -83,30 +93,65 @@
 
 			return array;
 		}
+
+		function startTimer(duration, display) {
+			var timer = duration, minutes, seconds;
+			setInterval(function () {
+				minutes = parseInt(timer / 60, 10);
+				seconds = parseInt(timer % 60, 10);
+
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+
+				display.text(minutes + ":" + seconds);
+
+				if (--timer < 0) {
+					timer = duration;
+				}
+			}, 1000);
+		}
 	</script>
 }
 
 <h2>Draft Lottery</h2>
 
-<div class="jumbotron" style="float: left; width: 40%">
-	<h1>Draft Order</h1>
-	<dl class="draftOrder"></dl>
-</div>
-
-<div class="row">
-<div class="col-md-1" />
-</div>
-
-<div class="row" style="float: left; width: 50%; overflow: hidden">
-@foreach (var team in Model)
-{
-	<div class="col-md-4 eligible" style="border: 1px solid black; height: 125px;" data-team-id="@team.Id" data-team-name="@team.TeamName" data-team-coach="@team.Coach">
-		<h2>@team.TeamName</h2>
+<div class="countdown" style="display: none;">
+	<div class="jumbotron" style="text-align: center;">
+		<h1>Draft Order</h1>
 	</div>
-}
-	<div style="clear: both"></div>
-	<div style="padding-top: 25px;">
-		<input type="button" value="Start" class="js-start" />
+</div>
+<form action="/charge" method="POST">
+	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+			data-image="/img/documentation/checkout/marketplace.png"
+			data-name="Stripe.com"
+			data-description="2 widgets"
+			data-amount="2000"
+			data-panel-label="Subscribe"
+			data-locale="auto">
+	</script>
+</form>
+<div class="lottery">
+	<div class="jumbotron" style="float: left; width: 40%">
+		<h1>Draft Order</h1>
+		<dl class="draftOrder"></dl>
+	</div>
+
+	<div class="row">
+		<div class="col-md-1" />
+	</div>
+
+	<div class="row" style="float: left; width: 50%; overflow: hidden">
+		@foreach (var team in Model)
+		{
+			<div class="col-md-4 eligible" style="height: 125px;" data-team-id="@team.Id" data-team-name="@team.TeamName" data-team-coach="@team.Coach">
+				<h2>@team.TeamName</h2>
+			</div>
+		}
+		<div style="clear: both"></div>
+		<div style="padding-top: 25px;">
+			<input type="button" value="Start" class="js-start" />
+		</div>
 	</div>
 </div>
 

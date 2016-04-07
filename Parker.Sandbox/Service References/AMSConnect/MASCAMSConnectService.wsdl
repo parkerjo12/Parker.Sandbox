@@ -31,6 +31,8 @@
       <xsd:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels" />
+      <xsd:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services" />
+      <xsd:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IMASCAMSConnectService_CityConnectSignUp_InputMessage">
@@ -39,30 +41,60 @@
   <wsdl:message name="IMASCAMSConnectService_CityConnectSignUp_OutputMessage">
     <wsdl:part name="parameters" element="tns:CityConnectSignUpResponse" />
   </wsdl:message>
-  <wsdl:message name="IMASCAMSConnectService_CreateIndividual_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateIndividual" />
+  <wsdl:message name="IMASCAMSConnectService_GetIndividual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndividual" />
   </wsdl:message>
-  <wsdl:message name="IMASCAMSConnectService_CreateIndividual_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateIndividualResponse" />
+  <wsdl:message name="IMASCAMSConnectService_GetIndividual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndividualResponse" />
   </wsdl:message>
-  <wsdl:message name="IMASCAMSConnectService_Search_InputMessage">
-    <wsdl:part name="parameters" element="tns:Search" />
+  <wsdl:message name="IMASCAMSConnectService_PostIndividual_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostIndividual" />
   </wsdl:message>
-  <wsdl:message name="IMASCAMSConnectService_Search_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  <wsdl:message name="IMASCAMSConnectService_PostIndividual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMASCAMSConnectService_Relationships_InputMessage">
+    <wsdl:part name="parameters" element="tns:Relationships" />
+  </wsdl:message>
+  <wsdl:message name="IMASCAMSConnectService_Relationships_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RelationshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMASCAMSConnectService_SetOffDebtIndividuals_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOffDebtIndividuals" />
+  </wsdl:message>
+  <wsdl:message name="IMASCAMSConnectService_SetOffDebtIndividuals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOffDebtIndividualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMASCAMSConnectService_Organization_InputMessage">
+    <wsdl:part name="parameters" element="tns:Organization" />
+  </wsdl:message>
+  <wsdl:message name="IMASCAMSConnectService_Organization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganizationResponse" />
   </wsdl:message>
   <wsdl:portType name="IMASCAMSConnectService">
     <wsdl:operation name="CityConnectSignUp">
       <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/CityConnectSignUp" message="tns:IMASCAMSConnectService_CityConnectSignUp_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/CityConnectSignUpResponse" message="tns:IMASCAMSConnectService_CityConnectSignUp_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateIndividual">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/CreateIndividual" message="tns:IMASCAMSConnectService_CreateIndividual_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/CreateIndividualResponse" message="tns:IMASCAMSConnectService_CreateIndividual_OutputMessage" />
+    <wsdl:operation name="GetIndividual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/GetIndividual" message="tns:IMASCAMSConnectService_GetIndividual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/GetIndividualResponse" message="tns:IMASCAMSConnectService_GetIndividual_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Search">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/Search" message="tns:IMASCAMSConnectService_Search_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/SearchResponse" message="tns:IMASCAMSConnectService_Search_OutputMessage" />
+    <wsdl:operation name="PostIndividual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/PostIndividual" message="tns:IMASCAMSConnectService_PostIndividual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/PostIndividualResponse" message="tns:IMASCAMSConnectService_PostIndividual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Relationships">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/Relationships" message="tns:IMASCAMSConnectService_Relationships_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/RelationshipsResponse" message="tns:IMASCAMSConnectService_Relationships_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOffDebtIndividuals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividuals" message="tns:IMASCAMSConnectService_SetOffDebtIndividuals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividualsResponse" message="tns:IMASCAMSConnectService_SetOffDebtIndividuals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Organization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMASCAMSConnectService/Organization" message="tns:IMASCAMSConnectService_Organization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMASCAMSConnectService/OrganizationResponse" message="tns:IMASCAMSConnectService_Organization_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IMASCAMSConnectService" type="tns:IMASCAMSConnectService">
@@ -77,8 +109,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateIndividual">
-      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/CreateIndividual" style="document" />
+    <wsdl:operation name="GetIndividual">
+      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/GetIndividual" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -86,8 +118,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Search">
-      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/Search" style="document" />
+    <wsdl:operation name="PostIndividual">
+      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/PostIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Relationships">
+      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/Relationships" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOffDebtIndividuals">
+      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/SetOffDebtIndividuals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Organization">
+      <soap12:operation soapAction="http://tempuri.org/IMASCAMSConnectService/Organization" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

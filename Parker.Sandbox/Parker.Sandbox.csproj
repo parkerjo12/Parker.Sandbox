@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,7 +58,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,17 +133,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AMSConnect\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Services\ClientService.svc.cs">
+      <DependentUpon>ClientService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewModel\FantasyTeamViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\MASClogo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -161,6 +169,19 @@
     <Content Include="Scripts\_references.js" />
     <None Include="Service References\AMSConnect\configuration91.svcinfo" />
     <None Include="Service References\AMSConnect\configuration.svcinfo" />
+    <None Include="Service References\AMSConnect\MASCAMSConnectService.disco" />
+    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.IndividualViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.IndividualServiceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.OrganizationViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\AMSConnect\MASCAMSConnectService.wsdl" />
     <None Include="Service References\AMSConnect\MASCAMSConnectService.xsd">
       <SubType>Designer</SubType>
@@ -171,15 +192,20 @@
     <None Include="Service References\AMSConnect\MASCAMSConnectService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.IndividualViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Service References\AMSConnect\MASCAMSConnectService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AMSConnect\MASCAMSConnectService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AMSConnect\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\AMSConnect\MASCAMSConnectService.disco" />
-    <Content Include="Web.config" />
+    <Content Include="Services\ClientService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -194,6 +220,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DraftLottery.cshtml" />
+    <Content Include="Views\Home\MASCProfile.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Home\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services.ViewModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services" />
+  <xs:complexType name="CityConnectSignupViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="tns:Name" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityConnectSignupViewModel" nillable="true" type="tns:CityConnectSignupViewModel" />
+  <xs:complexType name="Name">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="First" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Last" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Name" nillable="true" type="tns:Name" />
+  <xs:complexType name="IndividualViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgAccountingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relationships" nillable="true" type="tns:ArrayOfOrganizationIndividualViewModel" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndividualViewModel" nillable="true" type="tns:IndividualViewModel" />
+  <xs:complexType name="ArrayOfOrganizationIndividualViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrganizationIndividualViewModel" nillable="true" type="tns:OrganizationIndividualViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganizationIndividualViewModel" nillable="true" type="tns:ArrayOfOrganizationIndividualViewModel" />
+  <xs:complexType name="OrganizationIndividualViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrgAccountingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganizationIndividualViewModel" nillable="true" type="tns:OrganizationIndividualViewModel" />
+  <xs:complexType name="IndividualServiceResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MASC.AMS.ClienteWeb.services" minOccurs="0" name="Error" nillable="true" type="q1:MASCServiceError" />
+      <xs:element minOccurs="0" name="HttpStatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewModel" nillable="true" type="tns:IndividualViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndividualServiceResult" nillable="true" type="tns:IndividualServiceResult" />
+  <xs:complexType name="ArrayOfIndividualViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndividualViewModel" nillable="true" type="tns:IndividualViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndividualViewModel" nillable="true" type="tns:ArrayOfIndividualViewModel" />
+  <xs:complexType name="OrganizationViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndividualRelationships" nillable="true" type="tns:ArrayOfOrganizationIndividualViewModel" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganizationViewModel" nillable="true" type="tns:OrganizationViewModel" />
+</xs:schema>

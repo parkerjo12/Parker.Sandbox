@@ -22,11 +22,13 @@
     <MetadataSource Address="https://masc-ams.vc3.com/eweb/webservices/mascamsconnectservice.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MASCAMSConnectService.xsd" MetadataType="Schema" ID="0d092e3d-769d-4c88-8ce3-7690708bbdb7" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd1" />
-    <MetadataFile FileName="MASCAMSConnectService.disco" MetadataType="Disco" ID="bf1457c3-0304-489a-83de-4c5006e17eb7" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?disco" />
-    <MetadataFile FileName="MASCAMSConnectService.wsdl" MetadataType="Wsdl" ID="43f3c0b5-afa9-4487-8dda-303c84156fcb" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?wsdl" />
-    <MetadataFile FileName="MASCAMSConnectService1.xsd" MetadataType="Schema" ID="d82218e3-2b3f-48ec-a2a1-0dc97f98e8ca" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd0" />
-    <MetadataFile FileName="MASCAMSConnectService2.xsd" MetadataType="Schema" ID="d13243e6-0b2b-408a-970d-8748981416b3" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MASCAMSConnectService.disco" MetadataType="Disco" ID="b91811c1-23e6-4f3d-84ed-cf4202b1cc2b" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?disco" />
+    <MetadataFile FileName="MASCAMSConnectService.xsd" MetadataType="Schema" ID="bb80fa47-485f-4441-9b0d-14017d942de7" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MASCAMSConnectService1.xsd" MetadataType="Schema" ID="3af31ed2-a6a3-49c3-9bea-9430164ca782" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MASCAMSConnectService2.xsd" MetadataType="Schema" ID="f39bfee8-1f7e-4d0f-ae75-1b768412e7d6" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MASCAMSConnectService.wsdl" MetadataType="Wsdl" ID="af699a22-235f-48fc-8c10-af7544fc3c83" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?wsdl" />
+    <MetadataFile FileName="MASCAMSConnectService3.xsd" MetadataType="Schema" ID="bf43bfe9-7f5a-4aab-9bee-0d9365e3b271" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MASCAMSConnectService4.xsd" MetadataType="Schema" ID="a83f8808-0989-4d67-aca8-29db5899e254" SourceId="1" SourceUrl="https://masc-ams.vc3.com/eweb/webservices/MASCAMSConnectService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
