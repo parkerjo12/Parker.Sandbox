@@ -135,11 +135,6 @@
     </Compile>
     <Compile Include="Infrastructure\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\AMSConnect\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Services\ClientService.svc.cs">
       <DependentUpon>ClientService.svc</DependentUpon>
     </Compile>
@@ -167,41 +162,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <None Include="Service References\AMSConnect\configuration91.svcinfo" />
-    <None Include="Service References\AMSConnect\configuration.svcinfo" />
-    <None Include="Service References\AMSConnect\MASCAMSConnectService.disco" />
-    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.IndividualViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.IndividualServiceResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.MASCServiceResultOfArrayOfOrganizationIndividualViewModeljq5QS4_St.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\AMSConnect\Parker.Sandbox.AMSConnect.OrganizationViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\AMSConnect\MASCAMSConnectService.wsdl" />
-    <None Include="Service References\AMSConnect\MASCAMSConnectService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AMSConnect\MASCAMSConnectService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AMSConnect\MASCAMSConnectService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AMSConnect\MASCAMSConnectService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AMSConnect\MASCAMSConnectService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AMSConnect\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Services\ClientService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -238,9 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\AMSConnect\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

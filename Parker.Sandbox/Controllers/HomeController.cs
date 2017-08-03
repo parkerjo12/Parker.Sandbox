@@ -74,16 +74,16 @@ namespace Parker.Sandbox.Controllers
 		public ActionResult DraftLottery()
 		{
 			var listModel = new[] {
-				new FantasyTeamViewModel { TeamName = "Suns Out Guns Out", Coach = "Parker" },
+				new FantasyTeamViewModel { TeamName = "$$ Dollar Dollar $$", Coach = "Parker" },
 				new FantasyTeamViewModel { TeamName = "Geno 911!", Coach = "Rashad" },
-				new FantasyTeamViewModel { TeamName = "Yuuuupp pppppp", Coach = "Zak"},
+				new FantasyTeamViewModel { TeamName = "BEERcules", Coach = "Zak"},
 				new FantasyTeamViewModel { TeamName = "U Mad Bro?", Coach = "Drew" },
 				new FantasyTeamViewModel { TeamName = "Skys Out Thighs Out", Coach = "Allen" },
-				new FantasyTeamViewModel { TeamName = "Trap Queen", Coach = "Shining Light" },
+				new FantasyTeamViewModel { TeamName = "White Lies Matter", Coach = "Shining Light" },
 				new FantasyTeamViewModel { TeamName = "Rusty Trombone", Coach = "Mitch" },
 				new FantasyTeamViewModel { TeamName = "He's Back", Coach = "Schirmer" },
-				new FantasyTeamViewModel { TeamName = "Stroke Genius", Coach = "Kelcey" },
-				new FantasyTeamViewModel { TeamName = "Late to the Party", Coach = "Aaron" }
+				new FantasyTeamViewModel { TeamName = "Stroke-Genius", Coach = "Kelcey" },
+				new FantasyTeamViewModel { TeamName = "Enter The Tebow", Coach = "Aaron" }
 			}.OrderBy(m => Guid.NewGuid()).ToList();
 
 			foreach (var model in listModel)
